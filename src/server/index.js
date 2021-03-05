@@ -4,6 +4,16 @@ const mockAPIResponse = require("./mockAPI.js");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 
+// Add environment variables so that my personal API key won't be public on Github
+const dotenv = require("dotenv");
+dotenv.config();
+console.log(`Your API key is ${process.env.API_KEY}`);
+
+var textapi = new MeaningCloud({
+	application_id: process.env.API_ID,
+	application_key: process.env.API_KEY,
+});
+
 const app = express();
 
 app.use(express.static("dist"));
