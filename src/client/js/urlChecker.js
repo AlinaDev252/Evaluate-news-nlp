@@ -1,6 +1,6 @@
 // solution found on stackoveflow https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
 
-function validURL(str) {
+function urlCheck(str) {
 	let pattern = new RegExp(
 		"^(https?:\\/\\/)?" + // protocol
 			"((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
@@ -13,4 +13,4 @@ function validURL(str) {
 	return !!pattern.test(str);
 }
 
-export { validURL };
+export { urlCheck };

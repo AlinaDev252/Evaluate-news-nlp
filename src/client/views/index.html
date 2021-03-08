@@ -2,42 +2,61 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8" />
-		<title>Test</title>
-		<link rel="stylesheet" href="/styles/resets.scss" />
-		<link rel="stylesheet" href="/styles/base.scss" />
-		<link rel="stylesheet" href="/styles/header.scss" />
-		<link rel="stylesheet" href="/styles/form.scss" />
-		<link rel="stylesheet" href="/styles/footer.scss" />
+		<title>Natural Language processing</title>
+		<link rel="stylesheet" src="/styles/resets.scss" />
+		<link rel="stylesheet" src="/styles/base.scss" />
+		<link rel="stylesheet" src="/styles/header.scss" />
+		<link rel="stylesheet" src="/styles/form.scss" />
+		<link rel="stylesheet" src="/styles/footer.scss" />
 	</head>
 
 	<body>
 		<header>
-			<div class="">Logo</div>
-			<div class="">navigation</div>
+			<h1>Evaluating a News post using the MeaningCloud API.</h1>
 		</header>
 
 		<main>
 			<section>
-				<form class="" onsubmit="return handleSubmit(event)">
-					<input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name" />
+				<form class="" id="submit" onsubmit="return Client.handleSubmit(event)">
+					<input class="user_input" id="urlInput" type="text" name="input" value="" placeholder="Enter a URL here" />
 					<input
+						class="btn"
 						type="submit"
-						name=""
-						value="submit"
-						onclick="return handleSubmit(event)"
-						onsubmit="return handleSubmit(event)"
+						id="submit"
+						value="Analysis"
+						onclick="return Client.handleSubmit(event)"
+						onsubmit="return Client.handleSubmit(event)"
 					/>
 				</form>
+				<div class="error_message" id="errorMessage"></div>
 			</section>
 
 			<section>
-				<strong>Form Results:</strong>
-				<div id="results"></div>
+				<h3>Results:</h3>
+				<div id="polarity"></div>
+				<div id="agreement"></div>
+				<div id="subjectivity"></div>
+				<div id="confidence"></div>
+				<div id="irony"></div>
 			</section>
 		</main>
+		<!-- <script>
+			if ("serviceWorker" in navigator) {
+				window.addEventListener("load", () => {
+					navigator.serviceWorker
+						.register("/service-worker.js")
+						.then((registration) => {
+							console.log("SW registered: ", registration);
+						})
+						.catch((registrationError) => {
+							console.log("SW registration failed: ", registrationError);
+						});
+				});
+			}
+		</script> -->
 
 		<footer>
-			<p>This is a footer</p>
+			<h3>@Copyright Alina Goiea</h3>
 		</footer>
 	</body>
 </html>
