@@ -21,6 +21,8 @@ app.use(bodyParser.json());
 
 console.log(__dirname);
 
+app.options("*", cors());
+
 app.get("/", function (req, res) {
 	res.sendFile("dist/index.html");
 });
@@ -36,9 +38,10 @@ app.get("/test", function (req, res) {
 
 // POST route
 app.post("/meaningCloud", addMeaning);
+
 async function addMeaning(req, res) {
-	entryUrl = req.body.url;
-	console.log("The URL entered:", baseUrl);
+	baseUrl = req.body.url;
+	console.log("Entered URL:", baseUrl);
 	const apiUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&url=${req.body.url}&lang=en`;
 
 	const response = await fetch(apiUrl);
