@@ -18,7 +18,7 @@ _NLP is a subset of AI that provides computers ability to process or interact wi
 In order to complete this projects, the bellow **stages** were followed:
 
 1. _Getting Started - Setting up the Project_ - **installing all the neccessary dependencies**.
-2. _Setting up the API_ - I have used [MeaningCloud Sentiment Analysis API (https://www.meaningcloud.com/developer/sentiment-analysis)
+2. _Setting up the API_ - I have used [MeaningCloud Sentiment Analysis API](https://www.meaningcloud.com/developer/sentiment-analysis)
    1. _Sign up for an API key_
    2. _Set the Environment Variables_
    3. _Using the API accordingly to the official documentation_
