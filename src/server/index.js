@@ -1,4 +1,5 @@
 var path = require("path");
+var axios = require("axios");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -9,25 +10,23 @@ const mockAPIResponse = require("./mockAPI.js");
 const dotenv = require("dotenv");
 dotenv.config();
 const apiKey = process.env.API_KEY;
-console.log(`Your API Key is ${process.env.API_KEY}`);
-let baseUrl = [];
 
 const app = express();
 
 app.use(cors());
 app.use(express.static("dist"));
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 console.log(__dirname);
 
-app.options("*", cors());
-
+// GET request
 app.get("/", function (req, res) {
 	res.sendFile("dist/index.html");
 });
 
-// designates what port the app will listen to for incoming requests
+// Designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
 	console.log("MeaningCloud app listening on port 8081!");
 });
@@ -36,23 +35,28 @@ app.get("/test", function (req, res) {
 	res.send(mockAPIResponse);
 });
 
-// POST route
-app.post("/meaningCloud", addMeaning);
+const request = require("request");
+//POST request
+app.post("/meaningAPI", (req, res) => {
+	const url = req.body.url;
+	getSentiment(url, apiKey, (data) => {
+		console.log(data);
+		res.send(data);
+	});
+});
 
-async function addMeaning(req, res) {
-	baseUrl = req.body.url;
-	console.log("Entered URL:", baseUrl);
-	const apiUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&url=${req.body.url}&lang=en`;
-
-	const response = await fetch(apiUrl);
-	const meaningdata = await response.json();
-	const projectData = {
-		score_tag: meaningdata.score_tag,
-		agreement: meaningdata.agreement,
-		subjectivity: meaningdata.subjectivity,
-		confidence: meaningdata.confidence,
-		irony: meaningdata.irony,
-	};
-	console.log(projectData);
-	res.send(projectData);
-}
+const getSentiment = (url, key, callback) => {
+	request(
+		`https://api.meaningcloud.com/sentiment-2.1?key=${key}&lang=en&url=${url}`,
+		{
+			json: true,
+		},
+		(err, res, body) => {
+			if (!err && res.statusCode == 200) {
+				callback(body);
+			} else {
+				console.log(error);
+			}
+		}
+	);
+};
