@@ -4,11 +4,20 @@ input {
 	line-height: 16px;
 	margin: 20px 0;
 	border: 2px solid black;
+	border-radius: 10px;
+}
+
+#submit .btn {
+	width: 596px;
+	font-size: 20px;
+	font-family: "Mali", cursive;
 }
 
 .form-container {
 	display: flex;
 	margin: 100px 150px 0px 400px;
+	border-radius: 10px;
+	background-color: #b56576;
 }
 
 .results-container {
@@ -30,9 +39,11 @@ input {
 	width: 600px;
 }
 
-#submit:hover {
-	background-color: gray;
+#submit .btn:hover {
+	background-color: #eddcd2;
 	color: white;
+	font-size: bold;
+	transition: 0.3s ease;
 }
 
 main {
