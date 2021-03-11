@@ -16,33 +16,35 @@
 		</header>
 
 		<main>
-    <div id="app">
-			<section class="form-container">
-				<form class="" id="submit" onsubmit="return Client.handleSubmit(event)">
-					<input class="user_input" id="urlInput" type="text" name="input" value="" placeholder="Enter a URL here" />
-					<input
-						class="btn"
-						type="submit"
-						id="submit"
-						value="Analysis"
-						onclick="return Client.handleSubmit(event)"
-						onsubmit="return Client.handleSubmit(event)"
-					/>
-				</form>
-				<div class="error_message" id="errorMessage"></div>
-			</section>
+			<div id="app">
+				<section class="form-container">
+					<form class="" id="submitx" onsubmit="return Client.handleSubmit(event)">
+						<input class="user_input" id="urlInput" type="text" name="input" value="" placeholder="Enter a URL here" />
+						<button
+							class="btn"
+							type="submit"
+							id="submit"
+							value="Analysis"
+							onclick="return Client.handleSubmit(event)"
+							onsubmit="return Client.handleSubmit(event)"
+						>
+							Analysis
+						</button>
+					</form>
+					<div class="error_message" id="errorMessage"></div>
+				</section>
 
-			<section>
-				<div class="holder-entry">
-					<div class="result-title" id="entryHolder"><strong>See bellow the results bellow👇 </strong></h1>
-					<div id="polarity"></div>
-					<div id="agreement"></div>
-					<div id="subjectivity"></div>
-					<div id="confidence"></div>
-					<div id="irony"></div>
-				</div>
-			</section>
-      </div>
+				<section class="results">
+					<div class="holder-entry">
+						<div class="result-title" id="entryHolder"><strong>See bellow the results👇 </strong></div>
+						<div id="polarity"></div>
+						<div id="agreement"></div>
+						<div id="subjectivity"></div>
+						<div id="confidence"></div>
+						<div id="irony"></div>
+					</div>
+				</section>
+			</div>
 		</main>
 		<!-- <script>
 			if ("serviceWorker" in navigator) {
