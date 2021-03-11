@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
-		<meta charset="utf-8" />
-		<title>Natural Language processing</title>
+		<meta charset="UTF-8" />
+		<!-- <title>Natural Language processing</title>
 		<link rel="stylesheet" src="/styles/resets.scss" />
 		<link rel="stylesheet" src="/styles/base.scss" />
 		<link rel="stylesheet" src="/styles/header.scss" />
 		<link rel="stylesheet" src="/styles/form.scss" />
-		<link rel="stylesheet" src="/styles/footer.scss" />
+		<link rel="stylesheet" src="/styles/footer.scss" /> -->
 	</head>
 
 	<body>
 		<header>
-			<h1>Evaluating a News post using the MeaningCloud API</h1>
+			<div class="title">Evaluating a News post using the MeaningCloud API</div>
 		</header>
 
 		<main>
-			<section>
+    <div id="app">
+			<section class="form-container">
 				<form class="" id="submit" onsubmit="return Client.handleSubmit(event)">
 					<input class="user_input" id="urlInput" type="text" name="input" value="" placeholder="Enter a URL here" />
 					<input
@@ -32,15 +33,18 @@
 			</section>
 
 			<section>
-				<h3>Please see bellow the results:</h3>
-				<div id="polarity"></div>
-				<div id="agreement"></div>
-				<div id="subjectivity"></div>
-				<div id="confidence"></div>
-				<div id="irony"></div>
+				<div class="holder entry">
+					<div class="result-title" id="entryHolder"><strong>See bellow the results bellow👇 </strong></h1>
+					<div id="polarity"></div>
+					<div id="agreement"></div>
+					<div id="subjectivity"></div>
+					<div id="confidence"></div>
+					<div id="irony"></div>
+				</div>
 			</section>
+      </div>
 		</main>
-		<script>
+		<!-- <script>
 			if ("serviceWorker" in navigator) {
 				window.addEventListener("load", () => {
 					navigator.serviceWorker
@@ -53,10 +57,10 @@
 						});
 				});
 			}
-		</script>
+		</script> -->
 
 		<footer>
-			<h3>@Copyright Alina Goiea</h3>
+			<p class="footer-text">Copyright 2021 © Alina Goiea</p>
 		</footer>
 	</body>
 </html>

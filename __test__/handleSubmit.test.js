@@ -1,12 +1,12 @@
 import { handleSubmit } from "../src/client/js/formHandler";
 
-describe('Test, the function "handleSubmit()" should exist', () => {
+describe('Test, ensures the function "handleSubmit()" exists', () => {
 	test("It should return true", () => {
 		expect(handleSubmit).toBeDefined();
 	});
 });
 
-describe('Test, the function "handleSubmit()" should be a function', () => {
+describe('Test, ensures the function "handleSubmit()" is a function', () => {
 	test("It should be a function", () => {
 		expect(typeof handleSubmit).toBe("function");
 	});

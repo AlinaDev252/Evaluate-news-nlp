@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mali:wght@500&display=swap");
+
 body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	background: url("../assets/coding.png") no-repeat left center fixed;
+	background-color: #ccc;
 }
 
 main {
@@ -11,4 +16,13 @@ main {
 section {
 	max-width: 800px;
 	margin: 50px auto;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+	color: black;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
 }
