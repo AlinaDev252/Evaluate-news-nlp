@@ -5,8 +5,8 @@
 	"scripts": {
 		"test": "jest --coverage",
 		"start": "node src/server/index.js",
-		"build-prod": "webpack --config webpack.prod.js",
-		"build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+		"prod": "webpack --config webpack.prod.js && npm run start",
+		"dev": "webpack --config webpack.dev.js && npm run start"
 	},
 	"jest": {
 		"collectCoverage": true
@@ -43,7 +43,7 @@
 		"style-loader": "^2.0.0",
 		"terser-webpack-plugin": "^1.4.5",
 		"webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12",
+		"webpack-cli": "^3.3.12",
 		"webpack-dev-server": "^3.11.2",
 		"workbox-webpack-plugin": "^6.1.1"
 	}
