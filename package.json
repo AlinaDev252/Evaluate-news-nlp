@@ -6,7 +6,8 @@
 		"test": "jest --coverage",
 		"start": "node src/server/index.js",
 		"prod": "webpack --config webpack.prod.js && npm run start",
-		"dev": "webpack --config webpack.dev.js && npm run start"
+		"dev": "webpack --config webpack.dev.js && npm run start",
+		"netlify": "webpack --config webpack.prod.js"
 	},
 	"jest": {
 		"collectCoverage": true

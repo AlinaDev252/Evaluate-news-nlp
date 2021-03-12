@@ -18,8 +18,6 @@ app.use(express.static("dist"));
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-console.log("am intrat in index");
-
 console.log(__dirname);
 
 // GET request
