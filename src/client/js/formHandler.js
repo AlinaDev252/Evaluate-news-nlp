@@ -3,7 +3,7 @@ import { urlCheck } from "./urlChecker";
 function handleSubmit(event) {
 	event.preventDefault();
 
-	const baseURL = "http://localhost:8081/meaningAPI";
+	const baseURL = "./meaningAPI";
 	const url = document.getElementById("urlInput").value;
 	console.log("User's URL input is: ", url);
 

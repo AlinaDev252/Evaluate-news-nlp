@@ -13,6 +13,7 @@ module.exports = {
 	output: {
 		libraryTarget: "var",
 		library: "Client",
+		// path: path.resolve(__dirname, "/dist"),
 	},
 	node: {
 		fs: "empty",
