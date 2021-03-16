@@ -34,28 +34,27 @@ app.get("/test", function (req, res) {
 	res.send(mockAPIResponse);
 });
 
-const request = require("request");
 //POST request
 app.post("/meaningAPI", (req, res) => {
-	const url = req.body.url;
-	getSentiment(url, apiKey, (data) => {
-		console.log(data);
-		res.send(data);
-	});
+	axios
+		.post(`http://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`)
+		.then((response) => {
+			res.send(response.data);
+		});
 });
 
-const getSentiment = (url, key, callback) => {
-	request(
-		`https://api.meaningcloud.com/sentiment-2.1?key=${key}&lang=en&url=${url}`,
-		{
-			json: true,
-		},
-		(err, res, body) => {
-			if (!err && res.statusCode == 200) {
-				callback(body);
-			} else {
-				console.log(error);
-			}
-		}
-	);
-};
+// const getSentiment = (url, key, callback) => {
+// 	fetch(
+// 		`https://api.meaningcloud.com/sentiment-2.1?key=${key}&lang=en&url=${url}`,
+// 		{
+// 			json: true,
+// 		},
+// 		(err, res, body) => {
+// 			if (!err && res.statusCode == 200) {
+// 				callback(body);
+// 			} else {
+// 				console.log(error);
+// 			}
+// 		}
+// 	);
+// };

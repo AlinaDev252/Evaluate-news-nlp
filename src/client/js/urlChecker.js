@@ -1,4 +1,4 @@
-// solution found on stackoveflow https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
+// researched solution on stackoveflow https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
 
 function urlCheck(str) {
 	let pattern = new RegExp(

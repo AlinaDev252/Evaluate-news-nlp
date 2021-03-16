@@ -8,7 +8,6 @@
 		<link rel="stylesheet" src="/styles/header.scss" />
 		<link rel="stylesheet" src="/styles/form.scss" />
 		<link rel="stylesheet" src="/styles/footer.scss" />
-	</head>
 
 	<body>
 		<header>
@@ -20,16 +19,8 @@
 				<section class="form-container">
 					<form class="" id="submitx" onsubmit="return Client.handleSubmit(event)">
 						<input class="user_input" id="urlInput" type="text" name="input" value="" placeholder="Enter a URL here" />
-						<button
-							class="btn"
-							type="submit"
-							id="submit"
-							value="Analysis"
-							onclick="return Client.handleSubmit(event)"
-							onsubmit="return Client.handleSubmit(event)"
-						>
-							Analysis
-						</button>
+						<button class="btn" type="submit" id="submit" value="Analysis" onclick="return Client.handleSubmit(event)"
+							onsubmit="return Client.handleSubmit(event)">Analysis</button>
 					</form>
 					<div class="error_message" id="errorMessage"></div>
 				</section>
@@ -43,10 +34,9 @@
 						<div id="confidence"></div>
 						<div id="irony"></div>
 					</div>
-				</section>
 			</div>
 		</main>
-		<script>
+		<!-- <script>
 			if ("serviceWorker" in navigator) {
 				window.addEventListener("load", () => {
 					navigator.serviceWorker
@@ -59,8 +49,8 @@
 						});
 				});
 			}
-		</script>
 
+		</script> -->
 		<footer>
 			<p class="footer-text">Copyright 2021 © Alina Goiea</p>
 		</footer>
