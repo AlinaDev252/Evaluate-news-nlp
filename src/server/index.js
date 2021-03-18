@@ -3,10 +3,7 @@ const axios = require("axios");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const fetch = require("node-fetch");
 const mockAPIResponse = require("./mockAPI.js");
-
-let projectData = {};
 
 // Add environment variables so that my personal API key won't be public on Github
 const dotenv = require("dotenv");
