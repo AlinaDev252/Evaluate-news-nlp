@@ -1,16 +1,17 @@
 var path = require("path");
-var axios = require("axios");
+const axios = require("axios");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const fetch = require("node-fetch");
 const mockAPIResponse = require("./mockAPI.js");
 
+let projectData = {};
+
 // Add environment variables so that my personal API key won't be public on Github
 const dotenv = require("dotenv");
 dotenv.config();
 const apiKey = process.env.API_KEY;
-
 const app = express();
 
 app.use(cors());
@@ -26,8 +27,8 @@ app.get("/", function (req, res) {
 });
 
 // Designates what port the app will listen to for incoming requests
-app.listen(8081, function () {
-	console.log("MeaningCloud app listening on port 8081!");
+app.listen(8085, function () {
+	console.log("MeaningCloud app listening on port 8085!");
 });
 
 app.get("/test", function (req, res) {
@@ -36,25 +37,8 @@ app.get("/test", function (req, res) {
 
 //POST request
 app.post("/meaningAPI", (req, res) => {
-	axios
-		.post(`http://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`)
-		.then((response) => {
-			res.send(response.data);
-		});
+	axios.post(`http://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&url=${req.body.url}&lang=en`).then((response) => {
+		res.send(response.data);
+		console.log(response.data);
+	});
 });
-
-// const getSentiment = (url, key, callback) => {
-// 	fetch(
-// 		`https://api.meaningcloud.com/sentiment-2.1?key=${key}&lang=en&url=${url}`,
-// 		{
-// 			json: true,
-// 		},
-// 		(err, res, body) => {
-// 			if (!err && res.statusCode == 200) {
-// 				callback(body);
-// 			} else {
-// 				console.log(error);
-// 			}
-// 		}
-// 	);
-// };
