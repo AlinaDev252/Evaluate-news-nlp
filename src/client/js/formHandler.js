@@ -2,8 +2,8 @@ import { urlCheck } from "./urlChecker";
 import axios from "axios";
 
 const handleSubmit = async (event) => {
-  event.preventDefault();
-  
+	event.preventDefault();
+
 	let url = document.getElementById("urlInput").value;
 	console.log("::: Form Submitted :::");
 	console.log("User's URL input is: ", url);
