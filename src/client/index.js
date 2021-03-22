@@ -7,4 +7,8 @@ import "./styles/footer.scss";
 import "./styles/form.scss";
 import "./styles/header.scss";
 
+import "./assets/coding.png";
+import "./assets/github.png";
+import "./assets/twitter.png";
+
 export { urlCheck, handleSubmit };

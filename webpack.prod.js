@@ -26,15 +26,19 @@ module.exports = {
 				use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
 			},
 			{
-				test: /\.(png|jpg|JPG|jpeg|gif|svg)$/,
-				use: ["url-loader?limit=25000"],
+				test: /\.(png|ttf)$/,
+				loader: "file-loader",
+				options: {
+					outputPath: "assets",
+					name: "[name].[ext]",
+				},
 			},
 		],
 	},
 	plugins: [
 		new HtmlWebPackPlugin({
 			template: "./src/client/views/index.html",
-			filename: "./index.html",
+			filename: "index.html",
 		}),
 		new WorkboxPlugin.GenerateSW(),
 		new MiniCssExtractPlugin({ filename: "[name].css" }),
