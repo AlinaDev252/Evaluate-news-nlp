@@ -5,13 +5,13 @@ FN:14,(anonymous_1)
 FN:15,(anonymous_2)
 FN:21,(anonymous_3)
 FNF:4
-FNH:1
-FNDA:1,(anonymous_0)
+FNH:0
+FNDA:0,(anonymous_0)
 FNDA:0,(anonymous_1)
 FNDA:0,(anonymous_2)
 FNDA:0,(anonymous_3)
 DA:4,1
-DA:5,1
+DA:5,0
 DA:7,0
 DA:8,0
 DA:9,0
@@ -27,7 +27,7 @@ DA:24,0
 DA:25,0
 DA:26,0
 LF:16
-LH:3
+LH:2
 BRDA:11,0,0,0
 BRDA:11,0,1,0
 BRF:2
