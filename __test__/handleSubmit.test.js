@@ -1,13 +1,28 @@
 import { handleSubmit } from "../src/client/js/formHandler";
+import { mockAxios } from "axios";
+let MockAdapter;
 
-describe('Testing if the function "handleSubmit()" exists', () => {
+describe("Testing if the function is not null", () => {
 	test("It should return true", () => {
-		expect(handleSubmit).toBeDefined();
+		expect(handleSubmit).not.toBeNull;
 	});
 });
 
-describe('Testing if the function "handleSubmit()" is a function', () => {
-	test("It should be a function", () => {
-		expect(typeof handleSubmit).toBe("function");
+//Mock event.preventDefault() with Jest
+
+describe("Mocking preventDefault", () => {
+	test("It should mock preventDefault", () => {
+		const event = { preventDefault: () => {} };
+
+		// runs before each test starts running
+		beforeEach(() => {
+			mockAxios = new MockAdapter(Axios);
+			jest.spyOn(event, "preventDefault");
+		});
+
+		// runs after each test has finished
+		afterEach(() => {
+			mockAxios.reset();
+		});
 	});
 });

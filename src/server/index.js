@@ -24,8 +24,8 @@ app.get("/", function (req, res) {
 });
 
 // Designates what port the app will listen to for incoming requests
-app.listen(8085, function () {
-	console.log("MeaningCloud app listening on port 8085!");
+app.listen(2025, function () {
+	console.log("MeaningCloud app listening on port 2025!");
 });
 
 app.get("/test", function (req, res) {

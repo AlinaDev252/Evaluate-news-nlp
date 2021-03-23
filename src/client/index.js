@@ -1,5 +1,6 @@
 import { urlCheck } from "./js/urlChecker";
 import { handleSubmit } from "./js/formHandler";
+import { updateUI } from "./js/formHandler";
 
 import "./styles/resets.scss";
 import "./styles/base.scss";
@@ -11,4 +12,4 @@ import "./assets/coding.png";
 import "./assets/github.png";
 import "./assets/twitter.png";
 
-export { urlCheck, handleSubmit };
+export { urlCheck, handleSubmit, updateUI };

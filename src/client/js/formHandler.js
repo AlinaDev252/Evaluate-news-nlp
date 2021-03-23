@@ -1,8 +1,8 @@
 import { urlCheck } from "./urlChecker";
 import axios from "axios";
 
-const handleSubmit = async (event) => {
-	event.preventDefault();
+const handleSubmit = async (e) => {
+	e.preventDefault();
 
 	let url = document.getElementById("urlInput").value;
 	console.log("::: Form Submitted :::");
@@ -26,4 +26,4 @@ const updateUI = async (response) => {
 	document.getElementById("irony").innerHTML = "Irony: " + response.irony;
 };
 
-export { handleSubmit };
+export { handleSubmit, updateUI };
