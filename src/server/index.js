@@ -18,13 +18,20 @@ app.use(bodyParser.json());
 
 console.log(__dirname);
 
+// Error-handling middleware
+app.use(function (err, req, res, next) {
+	console.error(err.stack);
+	res.status(500).send("Something broke!");
+});
+
 // GET request
 app.get("/", function (req, res) {
 	res.sendFile("dist/index.html");
 });
 
 // Designates what port the app will listen to for incoming requests
-app.listen(2025, function () {
+const portNumber = 2025;
+app.listen(portNumber, function () {
 	console.log("MeaningCloud app listening on port 2025!");
 });
 

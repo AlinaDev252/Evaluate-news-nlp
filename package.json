@@ -25,6 +25,9 @@
 		"webpack": "^4.46.0",
 		"webpack-cli": "^3.3.5"
 	},
+	"server": {
+		"port": 2025
+	},
 	"devDependencies": {
 		"@babel/core": "^7.5.4",
 		"@babel/preset-env": "^7.5.4",
