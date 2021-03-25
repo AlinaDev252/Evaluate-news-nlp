@@ -10,7 +10,7 @@ const handleSubmit = async (e) => {
 
 	if (urlCheck(url) == true) {
 		axios
-			.post("http:localhost:2025/meaningAPI", { url: url })
+			.post("/meaningAPI", { url: url })
 			.then((res) => updateUI(res.data))
 			.catch((error) => console.log("Error", error));
 	} else {
